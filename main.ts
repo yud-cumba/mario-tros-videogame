@@ -1,6 +1,3 @@
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, location) {
-    tiles.setTilemap(tilemap`level8`)
-})
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
@@ -53,6 +50,9 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         mySprite.vy = -150
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, location) {
+    tiles.setTilemap(tilemap`level8`)
+})
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mario.setImage(img`
         . . . . . . . . . . . . . . . . 
@@ -74,7 +74,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
-    game.over(true)
+    tiles.setTilemap(tilemap`level10`)
 })
 function antiplayer2 () {
     mySprite = sprites.create(img`
